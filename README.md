@@ -20,6 +20,8 @@ Class to create menu for liquid crystal display (LCD). Designed for easy use.
 First setup menu by adding nodes with _addNode_ method. There you set the layer, the text to display and a function ID (FID).
 To navigate in the menu just call _right()_, _left()_, _enter()_ and _exit()_. Then you can check the FID and take action by calling functions for example.
  
+ Once you implemented the basic code like in the following example it is easy to change the menu or add further nodes.
+ 
 ## Example
 
 Menu should look like:
