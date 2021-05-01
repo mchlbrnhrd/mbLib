@@ -16,7 +16,9 @@ _format integer_
 
 # MBMenu
 
-Class to create menu for liquid crystal display (LCD)
+Class to create menu for liquid crystal display (LCD). Designed for easy use.
+First setup menu by adding nodes with _addNode_ method. There you set the layer, the text to display and a function ID (FID).
+To navigate in the menu just call _right()_, _left()_, _enter()_ and _exit()_. Then you can check the FID and take action by calling functions for example.
  
 ## Example
 
@@ -28,6 +30,9 @@ Menu should look like:
   2.1 BarA<br>
   
 ```C++  
+// ********************************************
+// some definitions
+// ********************************************
 // define text to display
 const char MenuFoo_pc[] PROGMEM = {"1. Foo"};
 const char MenuFoo_pc[] PROGMEM = {"1.1 FooA"};
@@ -37,15 +42,19 @@ const char MenuFoo_pc[] PROGMEM = {"2.1 BarA"};
 
 // define function IDs
 enum MenuFID {
-MenuDummy,
-MenuFoo,
-MenuFooA,
-MenuFooB,
-MenuBar,
-MenuBarA
+  MenuDummy,
+  MenuFoo,
+  MenuFooA,
+  MenuFooB,
+  MenuBar,
+  MenuBarA
 }
 
-// create CMBMenu instance
+
+// ********************************************
+// create/setup menu
+// ********************************************
+// create CMBMenu instance (here for maximum 100 menu entries)
 CMBMenu<100> g_Menu;
 
 // add nodes
@@ -60,4 +69,70 @@ const char* info;
 int fid = g_Menu.buildMenu(info);
 
 g_Menu.printMenu();
+
+
+// ********************************************
+// use menu
+// ********************************************
+loop() {
+  // function ID
+  int fid = 0;
+
+  int key=getKey();
+
+  // go to deeper or upper layer?
+  bool layerChanged=false;
+
+  // assume key holds current pressed key on a keyboard
+  switch(key) {
+    case KeyExit:
+      g_Menu.exit();
+      break;
+    case KeyEnter:
+      g_Menu.enter(layerChanged);
+      break;
+    case KeyRight:
+      g_Menu.right();
+      break;
+    case KeyLeft:
+      g_Menu.left();
+      break;
+    default:
+      break;
+  }
+  
+  if (KeyNone != key) {
+    // get current function ID and print menu
+    fid = g_Menu.getInfo(info);
+    printMenuEntry(info, fid);
+    delay(100);
+  }
+  
+  if ((0 != fid) && (KeyEnter == key) && (!layerChanged)) {
+    switch (fid) {
+      case MenuFooA:
+        callFooA();
+        break;
+      case MenuFooB:
+        callFooB();
+        break;
+      case MenuBarA:
+        callBarA();
+        break;
+      default:
+        break;
+    }
+  }
+}
+
+// example to print menu
+void printMenuEntry(const char* f_Info, const int f_Fid)
+{
+  String info_s;
+  MBHelper::stringFromPgm(f_Info, info_s);
+  g_Lcd.clear();
+  g_Lcd.setCursor(0, 0);
+  g_Lcd.print(info_s);
+}
+```
 
