@@ -25,11 +25,16 @@ To navigate in the menu just call _right()_, _left()_, _enter()_ and _exit()_. T
 ## Example
 
 Menu should look like:
-1. Foo<br>
-  1.1 FooA<br>
-  1.2 FooB<br>
-2. Bar<br>
-  2.1 BarA<br>
+
+| entry | layer |
+|-------|-------|
+|1. Foo | 0 |
+|&nbsp;&nbsp;1.1 FooA| 1|
+|&nbsp;&nbsp;1.2 FooB|1|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.1 Test1|2|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.2 Test2|2|
+|2. Bar|0|
+|&nbsp;&nbsp;2.1 BarA|1|
   
 ```C++  
 // ********************************************
@@ -37,10 +42,12 @@ Menu should look like:
 // ********************************************
 // define text to display
 const char MenuFoo_pc[] PROGMEM = {"1. Foo"};
-const char MenuFoo_pc[] PROGMEM = {"1.1 FooA"};
-const char MenuFoo_pc[] PROGMEM = {"1.2 FooB"};
-const char MenuFoo_pc[] PROGMEM = {"2. Bar"};
-const char MenuFoo_pc[] PROGMEM = {"2.1 BarA"};
+const char MenuFooA_pc[] PROGMEM = {"1.1 FooA"};
+const char MenuFooB_pc[] PROGMEM = {"1.2 FooB"};
+const char MenuTest1_pc[] PROGMEM = {"1.2.1 Test1"};
+const char MenuTest2_pc[] PROGMEM = {"1.2.2 Test2"};
+const char MenuBar_pc[] PROGMEM = {"2. Bar"};
+const char MenuBarA_pc[] PROGMEM = {"2.1 BarA"};
 
 // define function IDs
 enum MenuFID {
@@ -48,6 +55,8 @@ enum MenuFID {
   MenuFoo,
   MenuFooA,
   MenuFooB,
+  MenuTest1,
+  MenuTest2,
   MenuBar,
   MenuBarA
 }
@@ -63,6 +72,8 @@ CMBMenu<100> g_Menu;
 g_Menu.addNode(0, MenuFoo_pc , MenuFoo);
 g_Menu.addNode(1, MenuFooA_pc, MenuFooA);
 g_Menu.addNode(1, MenuFooB_pc, MenuFooB);
+g_Menu.addNode(2, MenuTest1_pc, MenuTest1);
+g_Menu.addNode(2, MenuTest2_pc, MenuTest2);
 
 g_Menu.addNode(0, MenuBar_pc, MenuBar);
 g_Menu.addNode(1, MenuBarA_pc, MenuBarA);
@@ -80,12 +91,14 @@ loop() {
   // function ID
   int fid = 0;
 
-  int key=getKey();
+  // getKey is a function which returns which key is pressed
+  // for example from push buttons
+  int key=getKey(); 
 
   // go to deeper or upper layer?
   bool layerChanged=false;
 
-  // assume key holds current pressed key on a keyboard
+  // call menu methods regarding pressed key
   switch(key) {
     case KeyExit:
       g_Menu.exit();
@@ -121,6 +134,7 @@ loop() {
       case MenuBarA:
         callBarA();
         break;
+      // ...
       default:
         break;
     }
