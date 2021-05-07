@@ -1,6 +1,9 @@
 # mbLib
 Library for microcontroller projects with helper funtions and classes.
 
+- **MBHelper** read string from progmem, format time as string, ...
+- **MBMenu** create menu for LCD
+
 # MBHelper
 Helper functions:
 * void stringFromPgm(const char* f_StringPgm_pc, String& f_Value);<br>
@@ -17,10 +20,10 @@ _format integer_
 # MBMenu
 
 Class to create menu for liquid crystal display (LCD). Designed for easy use.
-First setup menu by adding nodes with _addNode_ method. There you set the layer, the text to display and a function ID (FID).
-To navigate in the menu just call _right()_, _left()_, _enter()_ and _exit()_. Then you can check the FID and take action by calling functions for example.
+First setup menu by adding nodes with _addNode_ method. There you set the text to display, the layer and a function ID (FID).
+To navigate in the menu just call _right()_, _left()_, _enter()_ and _exit()_. Then you get the FID and you can take action by calling functions for example.
  
- Once you implemented the basic code like in the following example it is easy to change the menu or add further nodes.
+Once you implemented the basic code like in the following example it is easy to change the menu or add further nodes.
  
 ## Example
 
