@@ -1,9 +1,22 @@
 # mbLib
 Library for microcontroller projects with helper funtions and classes.
 
+- **How to use it**
 - **MBMenu** create menu for LCD
 - **MBHelper** read string from progmem, format time as string, ...
 
+# How to use it
+1. Go to arudino library folder and clone from github:
+```
+> cd myPathTo/Arduino/libraries
+> git clone https://github.com/mchlbrnhrd/mbLib
+```
+2. Open Arduino IDE and execute example code.
+```
+File->Examples->mbLib->menuExample
+```
+3. Connect Arduino board (e.g. Arduino Uno), compile and upload code.
+4. Open serial monitor and type _l_ for left, _r_ for right, _e_ for enter and _x_ for exit. Typing _m_ shows the menu. (Hint: After typing key press \<Enter\>)
 
 # MBMenu
 
