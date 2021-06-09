@@ -23,6 +23,10 @@ File->Examples->mbLib->menuExample
 Class to create menu for liquid crystal display (LCD). Designed for easy use.
 First setup menu by adding nodes with _addNode_ method. There you set the text to display, the layer and a function ID (FID).
 To navigate in the menu just call _right()_, _left()_, _enter()_ and _exit()_. Then you get the FID and you can take action by calling functions for example.
+* **addNode(text, layer, functionID)**: add new menu entries/nodes
+* **buildMenu()**: menu is built
+* **printMenu()**: show complete menu via serial monitor (terminal)
+* **left()**, **right()**, **enter()**, **exit()**: navigate through menu
 
 ![LCD menu](doc/menu_example.png)
  
@@ -126,7 +130,7 @@ Helper functions:
 * void lcdCharArrayFromPgm(const uint8_t* f_Pgm_pc, uint8_t* f_Value);<br>
   _get char array from progmem (PGM)_
 * void formatTime(unsigned long f_Seconds, String& f_Result);<br>
- _format time out from "seconds": h:mm:ss_
+ _format time out from "seconds": h:mm:ss_ example: **135s** => **0:02:15**
 * void formatTimeMillis(unsigned long f_Milliseconds, String& f_Result);<br>
 _format time out from "milliseconds": h:mm:ss.ms_
 * void formatInt(int f_Value, int f_Length, String& f_Result);<br>
