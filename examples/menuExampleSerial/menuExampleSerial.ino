@@ -21,13 +21,13 @@
 // definitions
 // ********************************************
 // define text to display
-const char MenuFoo_pc[] PROGMEM = {"1. Foo"};
-const char MenuFooA_pc[] PROGMEM = {"1.1 FooA"};
-const char MenuFooB_pc[] PROGMEM = {"1.2 FooB"};
-const char MenuTest1_pc[] PROGMEM = {"1.2.1 Test1"};
-const char MenuTest2_pc[] PROGMEM = {"1.2.2 Test2"};
-const char MenuBar_pc[] PROGMEM = {"2. Bar"};
-const char MenuBarA_pc[] PROGMEM = {"2.1 BarA"};
+const char g_MenuFoo_pc[] PROGMEM = {"1. Foo"};
+const char g_MenuFooA_pc[] PROGMEM = {"1.1 FooA"};
+const char g_MenuFooB_pc[] PROGMEM = {"1.2 FooB"};
+const char g_MenuTest1_pc[] PROGMEM = {"1.2.1 Test1"};
+const char g_MenuTest2_pc[] PROGMEM = {"1.2.2 Test2"};
+const char g_MenuBar_pc[] PROGMEM = {"2. Bar"};
+const char g_MenuBarA_pc[] PROGMEM = {"2.1 BarA"};
 
 // define function IDs
 enum MenuFID {
@@ -70,14 +70,14 @@ void setup()
 
   // ** menu **
   // add nodes to menu (layer, string, function ID)
-  g_Menu.addNode(0, MenuFoo_pc , MenuFoo);
-  g_Menu.addNode(1, MenuFooA_pc, MenuFooA);
-  g_Menu.addNode(1, MenuFooB_pc, MenuFooB);
-  g_Menu.addNode(2, MenuTest1_pc, MenuTest1);
-  g_Menu.addNode(2, MenuTest2_pc, MenuTest2);
+  g_Menu.addNode(0, g_MenuFoo_pc , MenuFoo);
+  g_Menu.addNode(1, g_MenuFooA_pc, MenuFooA);
+  g_Menu.addNode(1, g_MenuFooB_pc, MenuFooB);
+  g_Menu.addNode(2, g_MenuTest1_pc, MenuTest1);
+  g_Menu.addNode(2, g_MenuTest2_pc, MenuTest2);
 
-  g_Menu.addNode(0, MenuBar_pc, MenuBar);
-  g_Menu.addNode(1, MenuBarA_pc, MenuBarA);
+  g_Menu.addNode(0, g_MenuBar_pc, MenuBar);
+  g_Menu.addNode(1, g_MenuBarA_pc, MenuBarA);
 
 
   // ** menu **
