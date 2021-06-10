@@ -47,8 +47,8 @@ Menu should look like:
 |2. Bar|0|
 |&nbsp;&nbsp;2.1 BarA|1|
   
-Complete examples here: [menuExampleLCD.ino](examples/menuExample/menuExampleLCD.ino) and
-[menuExampleSerial.ino](examples/menuExample/menuExampleSerial.ino)
+Complete examples here: [menuExampleLCD.ino](examples/menuExampleLCD/menuExampleLCD.ino) and
+[menuExampleSerial.ino](examples/menuExampleSerial/menuExampleSerial.ino)
 
 Summarized the main parts of the code:
 ```C++  
@@ -123,7 +123,7 @@ void loop()
 }
 ```
 Here terminal output example:<br>
-<img src="examples/menuExample/menuExampleSerial.png" width="184" height="287" title="Terminal output example">
+<img src="examples/menuExampleSerial/menuExampleSerial.png" width="184" height="287" title="Terminal output example">
 
 # MBHelper
 Helper functions:
