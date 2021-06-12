@@ -11,9 +11,10 @@ Library for microcontroller projects with helper funtions and classes.
 > cd myPathTo/Arduino/libraries
 > git clone https://github.com/mchlbrnhrd/mbLib
 ```
-2. Open Arduino IDE and execute example code.
+2. Open Arduino IDE and execute one of following example codes.
 ```
-File->Examples->mbLib->menuExample
+File->Examples->mbLib->menuExampleLCD
+File->Examples->mbLib->menuExampleSerial
 ```
 3. Connect Arduino board (e.g. Arduino Uno), compile and upload code.
 4. Open serial monitor and type _l_ for left, _r_ for right, _e_ for enter and _x_ for exit. Typing _m_ shows the menu. (Hint: After typing key press \<Enter\>)
@@ -46,7 +47,8 @@ Menu should look like:
 |2. Bar|0|
 |&nbsp;&nbsp;2.1 BarA|1|
   
-Complete example here: [menuExample.ino](examples/menuExample/menuExample.ino)
+Complete examples here: [menuExampleLCD.ino](examples/menuExampleLCD/menuExampleLCD.ino) and
+[menuExampleSerial.ino](examples/menuExampleSerial/menuExampleSerial.ino)
 
 Summarized the main parts of the code:
 ```C++  
@@ -121,7 +123,7 @@ void loop()
 }
 ```
 Here terminal output example:<br>
-<img src="examples/menuExample/menuExample.png" width="184" height="287" title="Terminal output example">
+<img src="examples/menuExampleSerial/menuExampleSerial.png" width="184" height="287" title="Terminal output example">
 
 # MBHelper
 Helper functions:
