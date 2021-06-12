@@ -1,0 +1,39 @@
+###########################################
+# Syntax Coloring Map For mbLib
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+
+CMBMenu		KEYWORD1
+CMBMenuNode	KEYWORD1
+MBHelper	KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+
+#### CMBMenu ####
+addNode		KEYWORD2
+printMenu	KEYWORD2
+enter		KEYWORD2
+exit		KEYWORD2
+left		KEYWORD2
+right		KEYWORD2
+getInfo		KEYWORD2
+getFID		KEYWORD2
+buildMenu	KEYWORD2
+
+#### CMBMenuNode ####
+getInfo		KEYWORD2
+getFID		KEYWORD2
+setLayer	KEYWORD2
+getLayer	KEYWORD2
+
+#### MBHelper ####
+stringFromPgm		KEYWORD2
+lcdCharArrayFromPgm	KEYWORD2
+formatTimeMillis	KEYWORD2
+formatInt		KEYWORD2
+
