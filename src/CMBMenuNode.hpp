@@ -15,6 +15,7 @@
 #else
 #include "Arduino.h"
 #endif
+#include <stdint.h>
 
 class CMBMenuNode {
 public:

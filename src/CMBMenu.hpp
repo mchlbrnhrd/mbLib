@@ -16,7 +16,7 @@
 #endif
 #include "CMBMenuNode.hpp"
 #include "MBHelper.hpp"
-
+#include <stdint.h>
 
 // template class
 template <int maxElements> class CMBMenu {
