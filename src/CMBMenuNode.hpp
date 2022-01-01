@@ -1,9 +1,10 @@
 //
 //  CMBMenuNode.hpp
-//  Menu_test
 //
-//  Created by Michael on 13.09.20.
-//  Copyright © 2020 ___MICHAEL_BERNHARD___. All rights reserved.
+//  Author:          Michael Bernhard
+//  Available from:  https://github.com/mchlbrnhrd/mbLib
+//
+//  Description:     C++ class to create nodes for menu which is used by CMBMenu.
 //
 
 #ifndef CMBMenuNode_hpp

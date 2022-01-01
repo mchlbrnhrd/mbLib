@@ -1,9 +1,13 @@
 //
-//  CMBMenuNode.hpp
-//  Menu_test
+//  MBHelper.hpp
 //
-//  Created by Michael on 13.09.20.
-//  Copyright © 2020 ___MICHAEL_BERNHARD___. All rights reserved.
+//  Author:          Michael Bernhard
+//  Available from:  https://github.com/mchlbrnhrd/mbLib
+//
+//  Description:     Helper function for microcontroller projects (e.g. Arduino).
+//                   * get string from PROGMEM
+//                   * format time from given seconds into string
+//                   * format integer into string
 //
 
 #ifndef MBHelper_hpp
