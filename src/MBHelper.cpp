@@ -80,7 +80,7 @@ void MBHelper::stringFromPgm(const char* f_StringPgm_pc, String& f_Value)
 void MBHelper::formatTime(unsigned long f_Value_ul, String& f_Result_s, const timeFormat_en f_From_en, const timeFormat_en f_To_en)
 {
   f_Result_s = "";
-  const String l_Invalid_sc = "inv";
+  const String l_Invalid_sc = F("inv");
   String l_Tmp_s="";
   if (TimeFormatSeconds_enm == f_From_en) {
     unsigned long l_Hours_ul = f_Value_ul / 60UL / 60UL;
@@ -89,10 +89,10 @@ void MBHelper::formatTime(unsigned long f_Value_ul, String& f_Result_s, const ti
     if (TimeFormat_HH_MM_SS_enm == f_To_en) {
       formatInt((int)l_Hours_ul, 2, l_Tmp_s, '0');
       f_Result_s += l_Tmp_s;
-      f_Result_s += ":";
+      f_Result_s += F(":");
       formatInt((int)l_Minutes_ul, 2, l_Tmp_s, '0');
       f_Result_s += l_Tmp_s;
-      f_Result_s += ":";
+      f_Result_s += F(":");
       formatInt((int)l_Seconds_ul, 2, l_Tmp_s, '0');
       f_Result_s += l_Tmp_s;
     } else {
@@ -104,7 +104,7 @@ void MBHelper::formatTime(unsigned long f_Value_ul, String& f_Result_s, const ti
     if (TimeFormat_HH_MM_enm == f_To_en) {
       formatInt((int)l_Hours_ul, 2, l_Tmp_s, '0');
       f_Result_s += l_Tmp_s;
-      f_Result_s += ":";
+      f_Result_s += F(":");
       formatInt((int)l_Minutes_ul, 2, l_Tmp_s, '0');
       f_Result_s += l_Tmp_s;
     }
@@ -127,14 +127,14 @@ void MBHelper::formatTime(unsigned long f_Seconds, String& f_Result)
   unsigned long minutes = (f_Seconds - hours * 60UL * 60UL) / 60UL;
   unsigned long seconds = f_Seconds - hours * 60UL * 60UL - minutes * 60UL;
   f_Result = String((unsigned)hours);
-  f_Result += ":";
+  f_Result += F(":");
   if (minutes < 10) {
-    f_Result += "0";
+    f_Result += F("0");
   }
   f_Result += String((unsigned)minutes);
-  f_Result += ":";
+  f_Result += F(":");
   if (seconds < 10) {
-    f_Result += "0";
+    f_Result += F("0");
   }
   f_Result += String((unsigned)seconds);
 }
@@ -148,9 +148,9 @@ void MBHelper::formatTimeHHMM(unsigned long f_Seconds, String& f_Result)
   unsigned long hours = f_Seconds / 60UL / 60UL;
   unsigned long minutes = (f_Seconds - hours * 60UL * 60UL) / 60UL;
   formatInt((int)hours, 2, f_Result);
-  f_Result += ":";
+  f_Result += F(":");
   if (minutes < 10) {
-    f_Result += "0";
+    f_Result += F("0");
   }
   f_Result += String((unsigned)minutes);
 }
@@ -169,25 +169,25 @@ void MBHelper::formatTimeMillis(unsigned long f_Milliseconds, String& f_Result)
   f_Result = String((unsigned)hours);
   
   // minutes
-  f_Result += ":";
+  f_Result += F(":");
   if (minutes < 10) {
-    f_Result += "0";
+    f_Result += F("0");
   }
   f_Result += String((unsigned)minutes);
   
   // seconds
-  f_Result += ":";
+  f_Result += F(":");
   if (seconds < 10) {
-    f_Result += "0";
+    f_Result += F("0");
   }
   f_Result += String((unsigned)seconds);
   
   // milliseconds
-  f_Result += ".";
+  f_Result += F(".");
   if (milliseconds < 10) {
-    f_Result += "00";
+    f_Result += F("00");
   } else if (milliseconds < 100) {
-    f_Result += "0";
+    f_Result += F("0");
   }
   f_Result += String((unsigned) milliseconds);
 }

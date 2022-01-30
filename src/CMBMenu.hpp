@@ -82,17 +82,17 @@ public:
   //  print menu
   //==========================================================================================
   void printMenu() {
-    Serial.println("menu:");
+    Serial.println(F("menu:"));
     for (int i=0; i < m_numUsedElements; ++i) {
       for (int k=0; k < m_nodes[i].getLayer(); ++k) {
-        Serial.print("  ");
+        Serial.print(F("  "));
       }
       const char* info;
       m_nodes[i].getInfo(info);
       String info_s;
       MBHelper::stringFromPgm(info, info_s);
       Serial.print(info_s);
-      Serial.print(", ");
+      Serial.print(F(", "));
       Serial.println(m_nodes[i].getFID());
     }
   }
