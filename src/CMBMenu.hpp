@@ -69,7 +69,7 @@ public:
   //==========================================================================================
   //  add node to menu
   //==========================================================================================
-  void addNode(int f_Layer, const char* const f_Text, int f_FID) {
+  void addNode(int f_Layer, const char* const f_Text, const int f_FID) {
     if (m_index < maxElements) {
       m_nodes[m_index] = CMBMenuNode(f_Text, f_FID, f_Layer);
       ++m_index;
@@ -179,6 +179,24 @@ public:
     }
     if (-1 != rightNodeIdx) {
       m_index = rightNodeIdx;
+    }
+  }
+  
+  
+  //==========================================================================================
+  //  setMenuNode
+  //==========================================================================================
+  void setMenuNode(const int f_FID)
+  {
+    // seek for first match of f_FID and set current menu node to this
+    bool found=false;
+    int ctr=0;
+    while ((!found) && (ctr < m_numUsedElements)) {
+      if (f_FID == m_nodes[ctr].getFID()) {
+        m_index=ctr;
+        found=true;
+      }
+      ++ctr;
     }
   }
   

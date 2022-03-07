@@ -38,8 +38,8 @@ CMBMenuNode::CMBMenuNode()
 //  additional constructor
 //==========================================================================================
 CMBMenuNode::CMBMenuNode(const char * const f_Text,
-             int f_FID,
-             uint8_t f_Layer // = 0
+             const int f_FID,
+             const uint8_t f_Layer // = 0
 )
 {
   init(f_Text, f_FID, f_Layer);
@@ -68,8 +68,8 @@ void CMBMenuNode::getInfo(const char*& f_Info)
 //  init method
 //==========================================================================================
 void CMBMenuNode::init(const char * const f_Text,
-                 int f_FID,
-                 uint8_t f_Layer // = 0
+                 const int f_FID,
+                 const uint8_t f_Layer // = 0
 )
 {
   m_Text = f_Text;
@@ -81,7 +81,7 @@ void CMBMenuNode::init(const char * const f_Text,
 //==========================================================================================
 //  set layer
 //==========================================================================================
-void CMBMenuNode::setLayer(uint8_t f_Layer)
+void CMBMenuNode::setLayer(const uint8_t f_Layer)
 {
   m_Layer = f_Layer;
 }

@@ -41,7 +41,7 @@ public:
   CMBMenuNode();
   
   // constructor
-  CMBMenuNode(const char* const f_Text, int f_FID, uint8_t f_Layer=0);
+  CMBMenuNode(const char* const f_Text, const int f_FID, const uint8_t f_Layer=0);
   
   // destructor
   ~CMBMenuNode();
@@ -53,7 +53,7 @@ public:
   inline int getFID() {return m_FID;};
   
   // set layer
-  void setLayer(uint8_t f_Layer);
+  void setLayer(const uint8_t f_Layer);
   
   // get layer
   uint8_t getLayer(){return m_Layer;};
@@ -67,7 +67,7 @@ protected:
   int m_FID;
   
   // init method
-  void init(const char* const f_Text, int f_FID, uint8_t f_Layer=0);
+  void init(const char* const f_Text, const int f_FID, const uint8_t f_Layer=0);
   
   // layer
   uint8_t m_Layer;
