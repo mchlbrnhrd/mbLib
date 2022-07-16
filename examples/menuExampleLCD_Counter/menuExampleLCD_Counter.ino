@@ -8,6 +8,26 @@
  * 
  * Example by Ekhiw
  * 
+ * Navigation Mode :
+ *
+ * 1. Counter --(enter)--> 1.1 CounterA --(enter)--> Count Mode
+ * 
+ * 1. Counter --(right)--> 2. Variable
+ * 
+ * 
+ * Count Mode :
+ * 
+ * Count Mode --(enter)--> Navigation Mode
+ * 
+ * Count Mode --(right)--> Increment
+ * 
+ * Count Mode --(left)--> Decrement
+ * 
+ * Count Mode --(exit)--> Navigation Mode -1 Layer
+ *                       (When you Count Mode at layer 1 and
+ *                        press exit, you will take to layer 0)
+ *
+ * 
  * Code for C++ class CMBMenu is marked with ** menu **
  * the other code are helper function sfor demonstration
  *
