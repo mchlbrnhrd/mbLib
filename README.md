@@ -4,6 +4,8 @@ Library for microcontroller projects with helper funtions and classes.
 - **How to use it**
 - **MBMenu** create menu for LCD
 - **MBHelper** read string from progmem, format time as string, ...
+# Demonstration and code explanation
+**[Video: Tutorial](https://youtu.be/AFxryGIopDU)**
 
 # How to use it
 1. Go to arudino library folder and clone from github:
