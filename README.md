@@ -8,7 +8,7 @@ Library for microcontroller projects with helper funtions and classes.
 **[Video: Tutorial](https://youtu.be/AFxryGIopDU)**
 
 # How to use it
-1. Go to arudino library folder and clone from github:
+1. Go to arduino library folder and clone from github:
 ```
 > cd myPathTo/Arduino/libraries
 > git clone https://github.com/mchlbrnhrd/mbLib
@@ -17,6 +17,7 @@ Library for microcontroller projects with helper funtions and classes.
 ```
 File->Examples->mbLib->menuExampleLCD
 File->Examples->mbLib->menuExampleSerial
+File->Examples->mbLib->menuExampleLCD_Counter
 ```
 3. Connect Arduino board (e.g. Arduino Uno), compile and upload code.
 4. Open serial monitor and type _l_ for left, _r_ for right, _e_ for enter and _x_ for exit. Typing _m_ shows the menu. (Hint: After typing key press \<Enter\>)
